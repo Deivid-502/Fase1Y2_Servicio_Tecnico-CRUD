@@ -1,14 +1,19 @@
 @csrf
+
 <label>Nombre</label>
-<input name="nombre" value="{{ old('nombre', $registro->nombre ?? '') }}" required>
+<input type="text" name="nombre" value="{{ old('nombre', $registro->nombre ?? '') }}" required>
 
 <label>Email</label>
-<input name="email" value="{{ old('email', $registro->email ?? '') }}">
+<input type="email" name="email" value="{{ old('email', $registro->email ?? '') }}">
 
 <label>Teléfono</label>
-<input name="telefono" value="{{ old('telefono', $registro->telefono ?? '') }}">
+<input type="text" name="telefono" value="{{ old('telefono', $registro->telefono ?? '') }}">
 
-<label><input type="checkbox" name="activo" value="1" @checked(old('activo', $registro->activo ?? true))> Activo</label>
+<div style="display:inline-flex; align-items:center; gap:6px; margin-bottom:10px;">
+    <input type="checkbox" name="activo" value="1"
+           {{ old('activo', $registro->activo ?? 1) ? 'checked' : '' }}>
+    <span>Activo</span>
+</div>
 
 <div style="display:flex; gap:8px;">
     <button class="btn btn-primary" type="submit">Guardar</button>

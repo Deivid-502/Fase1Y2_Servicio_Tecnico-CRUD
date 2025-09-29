@@ -56,7 +56,7 @@
             <a href="{{ route('hist-estados.index') }}">Historial</a>
         </nav>
     </header>
-    
+
     @if(session('success'))
     <div class="msg msg-success">
         {{ session('success') }}
